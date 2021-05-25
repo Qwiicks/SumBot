@@ -1,9 +1,7 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/eritislami/evobot)
+![logo](https://i.imgur.com/OrD1HpT.png)
 
-![logo](https://repository-images.githubusercontent.com/186841818/8aa95700-7730-11e9-84be-e80f28520325)
-
-# 🤖 EvoBot (Discord Music Bot)
-> EvoBot is a Discord Music Bot built with discord.js & uses Command Handler from [discordjs.guide](https://discordjs.guide)
+# 🤖 SumBot (Discord Music Bot)
+>SumBot est un joli bot de musique pour la discorde pour jouer des chansons youtube! [discordjs.guide](https://discordjs.guide)
 
 ## Requirements
 
@@ -12,23 +10,20 @@
 2.1 **(Optional)** Soundcloud Client ID **[Guide](https://github.com/zackradisic/node-soundcloud-downloader#client-id)**
 3. Node.js v14.0.0 or newer
 
-## 🚀 Getting Started
-
-If deploying to Heroku make sure to create config variables
-
+## 🚀 c'est partie
 ```
-git clone https://github.com/eritislami/evobot.git
-cd evobot
+git clone https://github.com/Qwiicks/SumBot.git
+cd SumBot
 npm install
 ```
 
-After installation finishes you can use `node index.js` to start the bot.
+une fois l'installation finit faite : `node index.js` pour lancé le bot.
 
 ## ⚙️ Configuration
 
-Copy or Rename `config.json.example` to `config.json` and fill out the values:
+copié `config.json.example` renomme `config.json` :
 
-⚠️ **Note: Never commit or share your token or api keys publicly** ⚠️
+⚠️ **Note: Ne jamais valider ni partager votre jeton ou vos clés API publiquementy** ⚠️
 
 ```json
 {
@@ -36,90 +31,118 @@ Copy or Rename `config.json.example` to `config.json` and fill out the values:
   "YOUTUBE_API_KEY": "",
   "SOUNDCLOUD_CLIENT_ID": "",
   "MAX_PLAYLIST_SIZE": 10,
-  "PREFIX": "/",
+  "PREFIX": "sum.",
   "PRUNING": false,
-  "LOCALE": "en",
+  "LOCALE": "fr",
   "DEFAULT_VOLUME": 100,
   "STAY_TIME": 30
 }
 ```
 
 Currently available locales are:
-- English (en)
-- German (de)
-- French (fr)
-- Spanish (es)
-- Turkish (tr)
-- Korean (ko)
-- Brazilian Portuguese (pt_br)
-- Simplified Chinese (zh_cn)
-- Traditional Chinese (zh_tw)
+- Anglais (en)
+- Allemand (de)
+- Francais (fr)
+- Espagnol (es)
+- Turque (tr)
+- coréen (ko)
+-Brasilien Portugais (pt_br)
+- Chinois simplifié (zh_cn)
+- Chinois traditionel (zh_tw)
 - Check [Contributing](#-contributing) if you wish to help add more languages!
 
-## 📝 Features & Commands
+## 📝Fonctionnalités et commandes
 
-> Note: The default prefix is '/'
+> Note: Prefix par defaut 'sum.'
 
-* 🎶 Play music from YouTube via url
+* 🎶 Écouter de la musique depuis YouTube via l'URL
 
-`/play https://www.youtube.com/watch?v=GLvohMXgcBo`
+`sum.play https://www.youtube.com/watch?v=GLvohMXgcBo`
 
-* 🔎 Play music from YouTube via search query
+* 🔎Écouter de la musique depuis YouTube via une requête de recherche
 
-`/play under the bridge red hot chili peppers`
+`sum.play under the bridge red hot chili peppers`
 
-* 🎶 Play music from Soundcloud via url
+* 🎶 Écouter de la musique depuis Soundcloud via l'URL
 
-`/play https://soundcloud.com/blackhorsebrigade/pearl-jam-alive`
+`sum.play https://soundcloud.com/blackhorsebrigade/pearl-jam-alive`
 
-* 🔎 Search and select music to play
+* 🔎Recherchez et sélectionnez la musique à lire
 
-`/search Pearl Jam`
+`sum.search Pearl Jam`
 
-Reply with song number or numbers seperated by comma that you wish to play
+Répondez avec le numéro de chanson ou les numéros séparés par une virgule que vous souhaitez écouter
 
-Examples: `1` or `1,2,3`
+Exemples: `1` or `1,2,3`
 
-* 📃 Play youtube playlists via url
+* 📃 Écouter des listes de lecture YouTube via l'URL
 
-`/playlist https://www.youtube.com/watch?v=YlUKcNNmywk&list=PL5RNCwK3GIO13SR_o57bGJCEmqFAwq82c`
+`sum.playlist https://www.youtube.com/watch?v=YlUKcNNmywk&list=PL5RNCwK3GIO13SR_o57bGJCEmqFAwq82c`
 
-* 🔎 Play youtube playlists via search query
+* 🔎 Les commandes
 
-`/playlist linkin park meteora`
-* Now Playing (/np)
-* Queue system (/queue, /q)
-* Loop / Repeat (/loop)
-* Shuffle (/shuffle)
-* Volume control (/volume, /v)
-* Lyrics (/lyrics, /ly)
-* Pause (/pause)
-* Resume (/resume, /r)
-* Skip (/skip, /s)
-* Skip to song # in queue (/skipto, /st)
-* Move a song in the queue (/move, /mv)
-* Remove song # from queue (/remove, /rm)
-* Play an mp3 clip (/clip song.mp3) (put the file in sounds folder)
-* List all clips (/clips)
-* Show api ping (/ping)
-* Show bot uptime (/uptime)
-* Toggle pruning of bot messages (/pruning)
-* Localization in 6 languages
-* Help (/help, /h)
-* Command Handler from [discordjs.guide](https://discordjs.guide/)
-* Media Controls via Reactions
+`Prefix: sum.
 
-![reactions](https://i.imgur.com/9S7Omf9.png)
+Toute les commandes de sumbot codé par JordanHrndz#2323:
 
-## 🤝 Contributing
+sum.help (h)
+Display all commands and descriptions
 
-1. [Fork the repository](https://github.com/eritislami/evobot/fork)
-2. Clone your fork: `git clone https://github.com/your-username/evobot.git`
-3. Create your feature branch: `git checkout -b my-new-feature`
-4. Commit your changes: `git commit -am 'Add some feature'`
-5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request
+sum.loop (l)
+Toggle music loop
+
+sum.lyrics (ly)
+Get lyrics for the currently playing song
+
+sum.np
+Show now playing song
+
+sum.pause
+Pause the currently playing music
+
+sum.play §
+Écoute de la musique depuis YouTube ou SoundCloud
+
+sum.playlist (pl)
+Écoute une playlist venant de YouTube
+
+
+sum.pruning
+Possibilité de supprimer les messages du bot
+
+sum.queue (q)
+Afficher la file d'attente et la musique en cours de lecture.
+
+sum.remove
+Supprimer la chanson de la file d'attente
+
+sum.resume ®
+Reprendre la lecture de la musique en cours
+
+sum.search
+Recherchez et sélectionnez des vidéos à écouter
+
+sum.shuffle
+Mélange la file d'attentre
+
+sum.skip (s)
+Skip la musique en cours de lecture
+
+sum.skipto (st)
+Passer au numéro de file d'attente sélectionné
+
+sum.stop
+Arrête la musique
+
+sum.volume (v)
+Changer le volume de la musique en cours de lecture
+
+Invitez maintenant sur votre serveur!
+
+faite sum.help pour voir liste complète de SumBot.
+
+![reactions](https://i.imgur.com/OrD1HpT.png)
 
 ## 📝 Credits
 
-[@iCrawl](https://github.com/iCrawl) For the queue system used in this application which was adapted from [@iCrawl/discord-music-bot](https://github.com/iCrawl/discord-music-bot)
+JordanHrndz#2323
